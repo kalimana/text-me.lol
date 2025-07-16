@@ -317,5 +317,31 @@
         }
     };
 </script>
+    <script>
+    // Other existing keyboard listeners ...
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === "Escape") {
+            alert('There is no escape...');
+        }
+
+        // Keyboard blocker
+        if (e.key === "F12") {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "C" || e.key === "J")) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+        if (e.ctrlKey && e.key === "U") {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+    });
+</script>
 </body>
 </html>

@@ -293,5 +293,29 @@
             }
         });
     </script>
+    <script>
+    // ... your existing script ...
+
+    // Prevent right-click for added creepiness
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    // Add keyboard scares
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            alert('There is no escape...');
+        }
+    });
+
+    // 🔒 Anti-inspect keyboard blocker (casual deterrent)
+    document.onkeydown = function(e) {
+        if (e.key === "F12" || 
+            (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "C" || e.key === "J")) || 
+            (e.ctrlKey && e.key === "U")) {
+            return false;
+        }
+    };
+</script>
 </body>
 </html>

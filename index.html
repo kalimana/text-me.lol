@@ -1,19 +1,38 @@
+!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Me</title>
-    <script src="styles.js"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Text Me</title>
+<meta name="description" content="Simple interactive page with accessible controls" />
+<!-- Link to stylesheet (moved from styles.js to styles.css for clarity) -->
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="xYz123">
-        <h1 id="aBc456">Hello/h1>
-        <p id="dEf789">I want to fuck you.</p>
-        <button id="gHi012">Enter</button>
-    </div>
-    <audio id="jKl345" src="mNo678.mp3" type="audio/mp3"></audio>
-    <script src="script.js"></script>
+<main class="container xYz123" role="main">
+<header>
+<h1 id="aBc456">Hello</h1>
+<p id="dEf789">What's up</p>
+</header>
+
+
+<section class="controls">
+<button id="gHi012" class="btn" aria-controls="panel" aria-expanded="false">Enter</button>
+</section>
+
+
+<section id="panel" class="panel" aria-hidden="true">
+<p>Welcome! This panel becomes visible after you click the button.</p>
+</section>
+
+
+<!-- Optional audio (kept as in your original file). We will not autoplay — user gesture required. -->
+<audio id="jKl345" src="mNo678.mp3" preload="auto"></audio>
+</main>
+
+
+<!-- Clean, readable behavior in script.js -->
+<script src="script.js"></script>
 </body>
 </html>
-</script>
